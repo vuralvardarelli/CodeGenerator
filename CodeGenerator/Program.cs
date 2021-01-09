@@ -27,6 +27,11 @@ namespace CodeGenerator
             console.WritelineToConsole("**Note: Algorithm makes first 2 chars from letters then 4 chars from numbers, last 2 chars from letters.\n");
 
             CodeOperations co = new CodeOperations(console);
+            //co.GenerateThousandCodes();
+
+            string test = "XP7472A1";
+
+            co.CheckIfCodeIsValid(test);
 
             console.ReadKey();
 

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace CodeGenerator.Utils
 {
@@ -20,6 +21,8 @@ namespace CodeGenerator.Utils
             List<string> codes = GenerateCodes();
 
             TextFileOperations.WriteCodesToTextFile(codes);
+            _console.WritelineToConsole("CODES ARE GENERATED!");
+            _console.WritelineToConsole("You can find generated codes in -> " + Constants.TEXT_FILE_PATH);
         }
 
         public bool CheckIfCodeIsValid(string code)
@@ -84,7 +87,12 @@ namespace CodeGenerator.Utils
 
         private bool Validation(string code)
         {
-            return false;
+            var match = Regex.Match(code, Constants.REGEX_PATTERN);
+
+            if (!match.Success)            
+                return false;
+
+            return true;
         }
     }
 }
