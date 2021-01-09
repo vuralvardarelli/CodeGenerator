@@ -24,7 +24,7 @@ namespace CodeGenerator
             console.WritelineToConsole("3. Check if a code exists in generated 1000 codes. (First you must generate with option 1)");
             console.WritelineToConsole("4. Exit Application\n");
             console.WritelineToConsole("**Note: If text file already exists, option 1 deletes it and creates new file to add codes.");
-            console.WritelineToConsole("**Note: Algorithm makes first 2 chars from letters then 4 chars from numbers, last 2 chars from letters.\n");
+            console.WritelineToConsole("**Note: Algorithm makes first 2 chars from given letters then 4 chars from given numbers, last 2 chars from given letters.\n");
             console.WritelineToConsole("Please just hit 1 or 2 or 3 or 4.\n");
 
             CodeOperations co = new CodeOperations(console);
