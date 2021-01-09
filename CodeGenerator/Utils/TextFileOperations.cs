@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace CodeGenerator.Utils
@@ -39,6 +40,11 @@ namespace CodeGenerator.Utils
         public static void WriteCodesToTextFile(List<string> codes)
         {
             File.AppendAllLines(Constants.TEXT_FILE_PATH, codes);
+        }
+
+        public static List<string> ReadAllCodesFromTextFile()
+        {
+            return File.ReadAllLines(Constants.TEXT_FILE_PATH).ToList();
         }
     }
 }
