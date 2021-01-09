@@ -1,0 +1,4 @@
+# CodeGenerator
+Console App
+
+## init
