@@ -19,7 +19,6 @@ namespace CodeGenerator.Utils
         {
             List<string> codes = GenerateCodes();
 
-            TextFileOperations.CreateTextFile();
             TextFileOperations.WriteCodesToTextFile(codes);
         }
 
@@ -45,7 +44,40 @@ namespace CodeGenerator.Utils
             char[] letters = Constants.LETTER_STRING.ToCharArray();
             char[] numbers = Constants.NUMBER_STRING.ToCharArray();
 
-            
+            Random random = new Random();
+
+            while (codes.Count < 1000)
+            {
+                List<char> aCodeChars = new List<char>();
+
+                //First 2 letters
+                for (int i = 0; i < 2; i++)
+                {
+                    int rand = random.Next(0, letters.Length);
+                    aCodeChars.Add(letters[rand]);
+                }
+
+                //Then 4 numbers
+                for (int i = 0; i < 4; i++)
+                {
+                    int rand = random.Next(0, numbers.Length);
+                    aCodeChars.Add(numbers[rand]);
+                }
+
+                //Last 2 letters
+                for (int i = 0; i < 2; i++)
+                {
+                    int rand = random.Next(0, letters.Length);
+                    aCodeChars.Add(letters[rand]);
+                }
+
+                string code = new string(aCodeChars.ToArray());
+
+                if (codes.Where(c => c == code).FirstOrDefault() == null)
+                {
+                    codes.Add(code);
+                }
+            }           
 
             return codes;
         }

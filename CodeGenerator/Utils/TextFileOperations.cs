@@ -8,20 +8,13 @@ namespace CodeGenerator.Utils
 {
     public static class TextFileOperations
     {
-        public static string CreateTextFile()
+        public static void WriteCodesToTextFile(List<string> codes)
         {
             if (File.Exists(Constants.TEXT_FILE_PATH))
             {
                 File.Delete(Constants.TEXT_FILE_PATH);
             }
 
-            File.Create(Constants.TEXT_FILE_PATH);
-
-            return Constants.TEXT_FILE_PATH;
-        }
-
-        public static void WriteCodesToTextFile(List<string> codes)
-        {
             File.AppendAllLines(Constants.TEXT_FILE_PATH, codes);
         }
 
