@@ -46,7 +46,7 @@ namespace CodeGenerator.Utils
 
             Random random = new Random();
 
-            while (codes.Count < 1000)
+            while (codes.Count < Constants.CODE_COUNT_TO_GENERATE)
             {
                 List<char> aCodeChars = new List<char>();
 
