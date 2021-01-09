@@ -18,7 +18,7 @@ namespace CodeGenerator
             //To get console interface for actions
             IConsole console = serviceProvider.GetRequiredService<IConsole>();
 
-            console.WritelineToConsole("There are 3 options you can choose.\n");
+            console.WritelineToConsole("There are 4 options you can choose.\n");
             console.WritelineToConsole("1. Generate 1000 unique* codes to a text file under debug folder.");
             console.WritelineToConsole("2. Check if a code is valid by the algorithm.");
             console.WritelineToConsole("3. Check if a code exists in generated 1000 codes. (First you must generate with option 1)");
