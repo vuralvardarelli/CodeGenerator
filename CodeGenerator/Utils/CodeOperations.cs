@@ -21,7 +21,7 @@ namespace CodeGenerator.Utils
             List<string> codes = GenerateCodes();
 
             TextFileOperations.WriteCodesToTextFile(codes);
-            _console.WritelineToConsole("CODES ARE GENERATED!");
+            _console.WritelineToConsole("\nCODES ARE GENERATED!");
             _console.WritelineToConsole("You can find generated codes in -> " + Constants.TEXT_FILE_PATH);
         }
 
