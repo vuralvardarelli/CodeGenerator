@@ -1,22 +1,58 @@
-﻿using System;
+﻿using CodeGenerator.Log;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CodeGenerator.Utils
 {
-    public static class CodeOperations
+    public class CodeOperations
     {
-        public static List<string> GenerateThousandCodes()
-        {
-            List<string> list = new List<string>();
+        IConsole _console;
 
-            return list;
+        public CodeOperations(IConsole console)
+        {
+            _console = console;
         }
 
-        public static bool CheckIfCodeIsValid(string code)
+        public void GenerateThousandCodes()
+        {
+            List<string> codes = GenerateCodes();
+
+            TextFileOperations.CreateTextFile();
+            TextFileOperations.WriteCodesToTextFile(codes);
+        }
+
+        public bool CheckIfCodeIsValid(string code)
+        {
+            return Validation(code);
+        }
+
+        public bool CheckIfCodeIsCreated(string code)
+        {
+            List<string> codes = TextFileOperations.ReadAllCodesFromTextFile();
+
+            if (codes.Where(x => x == code).FirstOrDefault() != null)
+                return true;
+
+            return false;
+        }
+
+        private List<string> GenerateCodes()
+        {
+            List<string> codes = new List<string>();
+
+            char[] letters = Constants.LETTER_STRING.ToCharArray();
+            char[] numbers = Constants.NUMBER_STRING.ToCharArray();
+
+            
+
+            return codes;
+        }
+
+        private bool Validation(string code)
         {
             return false;
-            //List<string> codes 
         }
     }
 }
