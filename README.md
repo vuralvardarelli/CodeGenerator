@@ -12,10 +12,6 @@ There are 4 options you can choose.
 Note: If text file already exists, option 1 deletes it and creates new file to add codes.
 Note: Algorithm makes first 2 chars from given letters then 4 chars from given numbers, last 2 chars from given letters.
 
-Note: Letters -> ACDEFGHKLMNPRTXYZ
-Note: Numbers -> 234579
-Node: GenerateCount -> 1000
-
 Please just hit 1 or 2 or 3 or 4.
 
 Enjoy!
